@@ -26,7 +26,8 @@ export declare class CarouselSlideDirective {
      * e.g. if _mergeData=2, the slide will twice wider then slides with _mergeData=1
      */
     private _dataMerge;
-    dataMerge: number;
+    set dataMerge(data: number);
+    get dataMerge(): number;
     /**
      * Width of slide
      */
@@ -168,7 +169,7 @@ export declare class CarouselComponent implements OnInit, AfterContentChecked, A
     /**
      * Init subscription to resize event and attaches handler for this event
      */
-    private _winResizeWatcher();
+    private _winResizeWatcher;
     /**
      * Handler for transitioend event
      */
