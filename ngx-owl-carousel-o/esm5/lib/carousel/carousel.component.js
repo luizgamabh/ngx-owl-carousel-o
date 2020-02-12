@@ -1,3 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 import * as tslib_1 from "tslib";
 import { Component, Input, Output, Directive, QueryList, ContentChildren, TemplateRef, ElementRef, EventEmitter, HostListener, Inject, ChangeDetectorRef } from '@angular/core';
 import { merge, of, from } from 'rxjs';
@@ -56,38 +60,31 @@ var CarouselSlideDirective = /** @class */ (function () {
     CarouselSlideDirective.prototype.isNumeric = function (number) {
         return !isNaN(parseFloat(number));
     };
-    tslib_1.__decorate([
-        Input(),
-        tslib_1.__metadata("design:type", Object)
-    ], CarouselSlideDirective.prototype, "id", void 0);
-    tslib_1.__decorate([
-        Input(),
-        tslib_1.__metadata("design:type", Number),
-        tslib_1.__metadata("design:paramtypes", [Number])
-    ], CarouselSlideDirective.prototype, "dataMerge", null);
-    tslib_1.__decorate([
-        Input(),
-        tslib_1.__metadata("design:type", Object)
-    ], CarouselSlideDirective.prototype, "width", void 0);
-    tslib_1.__decorate([
-        Input(),
-        tslib_1.__metadata("design:type", Object)
-    ], CarouselSlideDirective.prototype, "dotContent", void 0);
-    tslib_1.__decorate([
-        Input(),
-        tslib_1.__metadata("design:type", Object)
-    ], CarouselSlideDirective.prototype, "dataHash", void 0);
-    CarouselSlideDirective = tslib_1.__decorate([
-        Directive({ selector: 'ng-template[carouselSlide]' }),
-        tslib_1.__metadata("design:paramtypes", [TemplateRef])
-    ], CarouselSlideDirective);
-    return CarouselSlideDirective;
-}());
-export { CarouselSlideDirective };
+    CarouselSlideDirective.prototype.width;
+    /**
+     * Inner content of dot for certain slide; can be html-markup
+     * @type {?}
+     */
+    CarouselSlideDirective.prototype.dotContent;
+    /**
+     * Hash (fragment) of url which corresponds to certain slide
+     * @type {?}
+     */
+    CarouselSlideDirective.prototype.dataHash;
+    /** @type {?} */
+    CarouselSlideDirective.prototype.tplRef;
+    /* Skipping unhandled member: ;*/
+}
 /**
  * Data which will be passed out after ending of transition of carousel
  */
-var SlidesOutputData = /** @class */ (function () {
+var /**
+ * Data which will be passed out after ending of transition of carousel
+ */
+SlidesOutputData = /** @class */ (function () {
+    /**
+     * Data which will be passed out after ending of transition of carousel
+     */
     function SlidesOutputData() {
     }
     return SlidesOutputData;
@@ -123,7 +120,6 @@ var CarouselComponent = /** @class */ (function () {
         this.docRef = docRef;
     }
     CarouselComponent.prototype.onVisibilityChange = function (ev) {
-        if (!this.carouselService.settings.autoplay)
             return;
         switch (this.docRef.visibilityState) {
             case 'visible':
@@ -255,7 +251,17 @@ var CarouselComponent = /** @class */ (function () {
     /**
      * Init subscription to resize event and attaches handler for this event
      */
-    CarouselComponent.prototype._winResizeWatcher = function () {
+    /**
+     * Init subscription to resize event and attaches handler for this event
+     * @private
+     * @return {?}
+     */
+    CarouselComponent.prototype._winResizeWatcher = /**
+     * Init subscription to resize event and attaches handler for this event
+     * @private
+     * @return {?}
+     */
+    function () {
         var _this = this;
         if (Object.keys(this.carouselService._options.responsive).length) {
             this.resizeSubscription = this.resizeService.onResize$

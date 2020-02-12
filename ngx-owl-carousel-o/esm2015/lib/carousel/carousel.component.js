@@ -52,33 +52,53 @@ let CarouselSlideDirective = class CarouselSlideDirective {
     isNumeric(number) {
         return !isNaN(parseFloat(number));
     }
+}
+CarouselSlideDirective.decorators = [
+    { type: Directive, args: [{ selector: 'ng-template[carouselSlide]' },] }
+];
+CarouselSlideDirective.ctorParameters = () => [
+    { type: TemplateRef }
+];
+CarouselSlideDirective.propDecorators = {
+    id: [{ type: Input }],
+    dataMerge: [{ type: Input }],
+    width: [{ type: Input }],
+    dotContent: [{ type: Input }],
+    dataHash: [{ type: Input }]
 };
-tslib_1.__decorate([
-    Input(),
-    tslib_1.__metadata("design:type", Object)
-], CarouselSlideDirective.prototype, "id", void 0);
-tslib_1.__decorate([
-    Input(),
-    tslib_1.__metadata("design:type", Number),
-    tslib_1.__metadata("design:paramtypes", [Number])
-], CarouselSlideDirective.prototype, "dataMerge", null);
-tslib_1.__decorate([
-    Input(),
-    tslib_1.__metadata("design:type", Object)
-], CarouselSlideDirective.prototype, "width", void 0);
-tslib_1.__decorate([
-    Input(),
-    tslib_1.__metadata("design:type", Object)
-], CarouselSlideDirective.prototype, "dotContent", void 0);
-tslib_1.__decorate([
-    Input(),
-    tslib_1.__metadata("design:type", Object)
-], CarouselSlideDirective.prototype, "dataHash", void 0);
-CarouselSlideDirective = tslib_1.__decorate([
-    Directive({ selector: 'ng-template[carouselSlide]' }),
-    tslib_1.__metadata("design:paramtypes", [TemplateRef])
-], CarouselSlideDirective);
-export { CarouselSlideDirective };
+if (false) {
+    /**
+     * Unique slide identifier. Must be unique for the entire document for proper accessibility support.
+     * Will be auto-generated if not provided.
+     * @type {?}
+     */
+    CarouselSlideDirective.prototype.id;
+    /**
+     * Defines how much widths of common slide will current slide have
+     * e.g. if _mergeData=2, the slide will twice wider then slides with _mergeData=1
+     * @type {?}
+     * @private
+     */
+    CarouselSlideDirective.prototype._dataMerge;
+    /**
+     * Width of slide
+     * @type {?}
+     */
+    CarouselSlideDirective.prototype.width;
+    /**
+     * Inner content of dot for certain slide; can be html-markup
+     * @type {?}
+     */
+    CarouselSlideDirective.prototype.dotContent;
+    /**
+     * Hash (fragment) of url which corresponds to certain slide
+     * @type {?}
+     */
+    CarouselSlideDirective.prototype.dataHash;
+    /** @type {?} */
+    CarouselSlideDirective.prototype.tplRef;
+    /* Skipping unhandled member: ;*/
+}
 /**
  * Data which will be passed out after ending of transition of carousel
  */
@@ -243,6 +263,8 @@ let CarouselComponent = class CarouselComponent {
     }
     /**
      * Init subscription to resize event and attaches handler for this event
+     * @private
+     * @return {?}
      */
     _winResizeWatcher() {
         if (Object.keys(this.carouselService._options.responsive).length) {
