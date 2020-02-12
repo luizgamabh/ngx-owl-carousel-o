@@ -1,11 +1,4 @@
 /**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Defaults value of options
- */
-var /**
  * Defaults value of options
  */
 var OwlCarouselOConfig = /** @class */ (function () {
