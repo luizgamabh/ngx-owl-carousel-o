@@ -1,4 +1,7 @@
-import * as tslib_1 from "tslib";
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { OwlCarouselOConfig, OwlOptionsMockedTypes } from '../carousel/owl-carousel-o-config';
@@ -480,9 +483,10 @@ let CarouselService = class CarouselService {
     }
     /**
      * Checks whether user's option are set properly. Cheking is based on typings;
-     * @param options options set by user
-     * @param configOptions default options
-     * @returns checked and modified (if it's needed) user's options
+     * @private
+     * @param {?} options options set by user
+     * @param {?} configOptions default options
+     * @return {?} checked and modified (if it's needed) user's options
      *
      * Notes:
      * 	- if user set option with wrong type, it'll be written in console
@@ -539,8 +543,9 @@ let CarouselService = class CarouselService {
     }
     /**
      * Checks option items set by user and if it bigger than number of slides then returns number of slides
-     * @param items option items set by user
-     * @returns right number of items
+     * @private
+     * @param {?} items option items set by user
+     * @return {?} right number of items
      */
     _validateItems(items) {
         let result;
@@ -659,8 +664,10 @@ let CarouselService = class CarouselService {
         });
     }
     /**
-       * Updates option logic if necessery
-       */
+     * Updates option logic if necessery
+     * @private
+     * @return {?}
+     */
     _optionsLogic() {
         if (this.settings.autoWidth) {
             this.settings.stagePadding = 0;
@@ -1112,12 +1119,13 @@ let CarouselService = class CarouselService {
         return coordinate;
     }
     /**
-       * Calculates the speed for a translation.
-       * @param from The absolute position of the start item.
-       * @param to The absolute position of the target item.
-       * @param factor [factor=undefined] - The time factor in milliseconds.
-       * @returns The time in milliseconds for the translation.
-       */
+     * Calculates the speed for a translation.
+     * @private
+     * @param {?} from The absolute position of the start item.
+     * @param {?} to The absolute position of the target item.
+     * @param {?=} factor [factor=undefined] - The time factor in milliseconds.
+     * @return {?} The time in milliseconds for the translation.
+     */
     _duration(from, to, factor) {
         if (factor === 0) {
             return 0;
@@ -1193,9 +1201,10 @@ let CarouselService = class CarouselService {
         this._trigger('translated');
     }
     /**
-       * Gets viewport width.
-       * @returns - The width in pixel.
-       */
+     * Gets viewport width.
+     * @private
+     * @return {?} - The width in pixel.
+     */
     _viewport() {
         let width;
         if (this._width) {
@@ -1215,6 +1224,8 @@ let CarouselService = class CarouselService {
     }
     /**
      * Sets slidesData using this._items
+     * @private
+     * @return {?}
      */
     _defineSlidesData() {
         // Maybe creating and using loadMap would be better in LazyLoadService.
@@ -1267,12 +1278,13 @@ let CarouselService = class CarouselService {
         return currentClasses;
     }
     /**
-       * Operators to calculate right-to-left and left-to-right.
-       * @param a - The left side operand.
-       * @param o - The operator.
-       * @param b - The right side operand.
-       * @returns true/false meaning right-to-left or left-to-right
-       */
+     * Operators to calculate right-to-left and left-to-right.
+     * @private
+     * @param {?} a - The left side operand.
+     * @param {?} o - The operator.
+     * @param {?} b - The right side operand.
+     * @return {?} true/false meaning right-to-left or left-to-right
+     */
     _op(a, o, b) {
         const rtl = this.settings.rtl;
         switch (o) {
@@ -1289,14 +1301,16 @@ let CarouselService = class CarouselService {
         }
     }
     /**
-       * Triggers a public event.
-       * @todo Remove `status`, `relatedTarget` should be used instead.
-       * @param name The event name.
-       * @param data The event data.
-       * @param namespace The event namespace.
-       * @param state The state which is associated with the event.
-       * @param enter Indicates if the call enters the specified state or not.
-       */
+     * Triggers a public event.
+     * \@todo Remove `status`, `relatedTarget` should be used instead.
+     * @private
+     * @param {?} name The event name.
+     * @param {?=} data The event data.
+     * @param {?=} namespace The event namespace.
+     * @param {?=} state The state which is associated with the event.
+     * @param {?=} enter Indicates if the call enters the specified state or not.
+     * @return {?}
+     */
     _trigger(name, data, namespace, state, enter) {
         switch (name) {
             case 'initialized':
@@ -1379,18 +1393,22 @@ let CarouselService = class CarouselService {
         }
     }
     /**
-       * Suppresses events.
-       * @param events The events to suppress.
-       */
+     * Suppresses events.
+     * @private
+     * @param {?} events The events to suppress.
+     * @return {?}
+     */
     _suppress(events) {
         events.forEach(event => {
             this._supress[event] = true;
         });
     }
     /**
-       * Releases suppressed events.
-       * @param events The events to release.
-       */
+     * Releases suppressed events.
+     * @private
+     * @param {?} events The events to release.
+     * @return {?}
+     */
     _release(events) {
         events.forEach(event => {
             delete this._supress[event];
@@ -1419,33 +1437,37 @@ let CarouselService = class CarouselService {
         return result;
     }
     /**
-       * Determines if the input is a Number or something that can be coerced to a Number
-       * @param number The input to be tested
-       * @returns An indication if the input is a Number or can be coerced to a Number
-       */
+     * Determines if the input is a Number or something that can be coerced to a Number
+     * @private
+     * @param {?} number The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number
+     */
     _isNumeric(number) {
         return !isNaN(parseFloat(number));
     }
     /**
      * Determines whether value is number or boolean type
-     * @param value The input to be tested
-     * @returns An indication if the input is a Number or can be coerced to a Number, or Boolean
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or Boolean
      */
     _isNumberOrBoolean(value) {
         return this._isNumeric(value) || typeof value === 'boolean';
     }
     /**
      * Determines whether value is number or string type
-     * @param value The input to be tested
-     * @returns An indication if the input is a Number or can be coerced to a Number, or String
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or String
      */
     _isNumberOrString(value) {
         return this._isNumeric(value) || typeof value === 'string';
     }
     /**
      * Determines whether value is number or string type
-     * @param value The input to be tested
-     * @returns An indication if the input is a Number or can be coerced to a Number, or String
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or String
      */
     _isStringOrBoolean(value) {
         return typeof value === 'string' || typeof value === 'boolean';

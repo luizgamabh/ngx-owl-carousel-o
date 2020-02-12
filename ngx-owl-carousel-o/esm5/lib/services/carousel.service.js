@@ -1,3 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 import * as tslib_1 from "tslib";
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -6,7 +10,13 @@ import { OwlLogger } from './logger.service';
 /**
  * Current state information and their tags.
  */
-var States = /** @class */ (function () {
+var /**
+ * Current state information and their tags.
+ */
+States = /** @class */ (function () {
+    /**
+     * Current state information and their tags.
+     */
     function States() {
     }
     return States;
@@ -36,7 +46,10 @@ export var Width;
 /**
  * Model for coords of .owl-stage
  */
-var Coords = /** @class */ (function () {
+Coords = /** @class */ (function () {
+    /**
+     * Model for coords of .owl-stage
+     */
     function Coords() {
     }
     return Coords;
@@ -45,7 +58,13 @@ export { Coords };
 /**
  * Model for all current data of carousel
  */
-var CarouselCurrentData = /** @class */ (function () {
+var /**
+ * Model for all current data of carousel
+ */
+CarouselCurrentData = /** @class */ (function () {
+    /**
+     * Model for all current data of carousel
+     */
     function CarouselCurrentData() {
     }
     return CarouselCurrentData;
@@ -508,7 +527,27 @@ var CarouselService = /** @class */ (function () {
      * Notes:
      * 	- if user set option with wrong type, it'll be written in console
      */
-    CarouselService.prototype._validateOptions = function (options, configOptions) {
+    /**
+     * Checks whether user's option are set properly. Cheking is based on typings;
+     * @private
+     * @param {?} options options set by user
+     * @param {?} configOptions default options
+     * @return {?} checked and modified (if it's needed) user's options
+     *
+     * Notes:
+     * 	- if user set option with wrong type, it'll be written in console
+     */
+    CarouselService.prototype._validateOptions = /**
+     * Checks whether user's option are set properly. Cheking is based on typings;
+     * @private
+     * @param {?} options options set by user
+     * @param {?} configOptions default options
+     * @return {?} checked and modified (if it's needed) user's options
+     *
+     * Notes:
+     * 	- if user set option with wrong type, it'll be written in console
+     */
+    function (options, configOptions) {
         var _this = this;
         var checkedOptions = tslib_1.__assign({}, options);
         var mockedTypes = new OwlOptionsMockedTypes();
@@ -568,7 +607,20 @@ var CarouselService = /** @class */ (function () {
      * @param items option items set by user
      * @returns right number of items
      */
-    CarouselService.prototype._validateItems = function (items) {
+    /**
+     * Checks option items set by user and if it bigger than number of slides then returns number of slides
+     * @private
+     * @param {?} items option items set by user
+     * @return {?} right number of items
+     */
+    CarouselService.prototype._validateItems = /**
+     * Checks option items set by user and if it bigger than number of slides then returns number of slides
+     * @private
+     * @param {?} items option items set by user
+     * @return {?} right number of items
+     */
+    function (items) {
+        /** @type {?} */
         var result;
         if (items > this._items.length) {
             result = this._items.length;
@@ -689,7 +741,17 @@ var CarouselService = /** @class */ (function () {
     /**
        * Updates option logic if necessery
        */
-    CarouselService.prototype._optionsLogic = function () {
+    /**
+     * Updates option logic if necessery
+     * @private
+     * @return {?}
+     */
+    CarouselService.prototype._optionsLogic = /**
+     * Updates option logic if necessery
+     * @private
+     * @return {?}
+     */
+    function () {
         if (this.settings.autoWidth) {
             this.settings.stagePadding = 0;
             this.settings.merge = false;
@@ -1150,7 +1212,23 @@ var CarouselService = /** @class */ (function () {
        * @param factor [factor=undefined] - The time factor in milliseconds.
        * @returns The time in milliseconds for the translation.
        */
-    CarouselService.prototype._duration = function (from, to, factor) {
+    /**
+     * Calculates the speed for a translation.
+     * @private
+     * @param {?} from The absolute position of the start item.
+     * @param {?} to The absolute position of the target item.
+     * @param {?=} factor [factor=undefined] - The time factor in milliseconds.
+     * @return {?} The time in milliseconds for the translation.
+     */
+    CarouselService.prototype._duration = /**
+     * Calculates the speed for a translation.
+     * @private
+     * @param {?} from The absolute position of the start item.
+     * @param {?} to The absolute position of the target item.
+     * @param {?=} factor [factor=undefined] - The time factor in milliseconds.
+     * @return {?} The time in milliseconds for the translation.
+     */
+    function (from, to, factor) {
         if (factor === 0) {
             return 0;
         }
@@ -1229,7 +1307,18 @@ var CarouselService = /** @class */ (function () {
        * Gets viewport width.
        * @returns - The width in pixel.
        */
-    CarouselService.prototype._viewport = function () {
+    /**
+     * Gets viewport width.
+     * @private
+     * @return {?} - The width in pixel.
+     */
+    CarouselService.prototype._viewport = /**
+     * Gets viewport width.
+     * @private
+     * @return {?} - The width in pixel.
+     */
+    function () {
+        /** @type {?} */
         var width;
         if (this._width) {
             width = this._width;
@@ -1249,7 +1338,17 @@ var CarouselService = /** @class */ (function () {
     /**
      * Sets slidesData using this._items
      */
-    CarouselService.prototype._defineSlidesData = function () {
+    /**
+     * Sets slidesData using this._items
+     * @private
+     * @return {?}
+     */
+    CarouselService.prototype._defineSlidesData = /**
+     * Sets slidesData using this._items
+     * @private
+     * @return {?}
+     */
+    function () {
         // Maybe creating and using loadMap would be better in LazyLoadService.
         // Hovewer in that case when 'resize' event fires, prop 'load' of all slides will get 'false' and such state of prop will be seen by View during its updating. Accordingly the code will remove slides's content from DOM even if it was loaded before.
         // Thus it would be needed to add that content into DOM again.
@@ -1306,7 +1405,24 @@ var CarouselService = /** @class */ (function () {
        * @param b - The right side operand.
        * @returns true/false meaning right-to-left or left-to-right
        */
-    CarouselService.prototype._op = function (a, o, b) {
+    /**
+     * Operators to calculate right-to-left and left-to-right.
+     * @private
+     * @param {?} a - The left side operand.
+     * @param {?} o - The operator.
+     * @param {?} b - The right side operand.
+     * @return {?} true/false meaning right-to-left or left-to-right
+     */
+    CarouselService.prototype._op = /**
+     * Operators to calculate right-to-left and left-to-right.
+     * @private
+     * @param {?} a - The left side operand.
+     * @param {?} o - The operator.
+     * @param {?} b - The right side operand.
+     * @return {?} true/false meaning right-to-left or left-to-right
+     */
+    function (a, o, b) {
+        /** @type {?} */
         var rtl = this.settings.rtl;
         switch (o) {
             case '<':
@@ -1330,7 +1446,29 @@ var CarouselService = /** @class */ (function () {
        * @param state The state which is associated with the event.
        * @param enter Indicates if the call enters the specified state or not.
        */
-    CarouselService.prototype._trigger = function (name, data, namespace, state, enter) {
+    /**
+     * Triggers a public event.
+     * \@todo Remove `status`, `relatedTarget` should be used instead.
+     * @private
+     * @param {?} name The event name.
+     * @param {?=} data The event data.
+     * @param {?=} namespace The event namespace.
+     * @param {?=} state The state which is associated with the event.
+     * @param {?=} enter Indicates if the call enters the specified state or not.
+     * @return {?}
+     */
+    CarouselService.prototype._trigger = /**
+     * Triggers a public event.
+     * \@todo Remove `status`, `relatedTarget` should be used instead.
+     * @private
+     * @param {?} name The event name.
+     * @param {?=} data The event data.
+     * @param {?=} namespace The event namespace.
+     * @param {?=} state The state which is associated with the event.
+     * @param {?=} enter Indicates if the call enters the specified state or not.
+     * @return {?}
+     */
+    function (name, data, namespace, state, enter) {
         switch (name) {
             case 'initialized':
                 this._initializedCarousel$.next(name);
@@ -1418,7 +1556,19 @@ var CarouselService = /** @class */ (function () {
        * Suppresses events.
        * @param events The events to suppress.
        */
-    CarouselService.prototype._suppress = function (events) {
+    /**
+     * Suppresses events.
+     * @private
+     * @param {?} events The events to suppress.
+     * @return {?}
+     */
+    CarouselService.prototype._suppress = /**
+     * Suppresses events.
+     * @private
+     * @param {?} events The events to suppress.
+     * @return {?}
+     */
+    function (events) {
         var _this = this;
         events.forEach(function (event) {
             _this._supress[event] = true;
@@ -1428,7 +1578,19 @@ var CarouselService = /** @class */ (function () {
        * Releases suppressed events.
        * @param events The events to release.
        */
-    CarouselService.prototype._release = function (events) {
+    /**
+     * Releases suppressed events.
+     * @private
+     * @param {?} events The events to release.
+     * @return {?}
+     */
+    CarouselService.prototype._release = /**
+     * Releases suppressed events.
+     * @private
+     * @param {?} events The events to release.
+     * @return {?}
+     */
+    function (events) {
         var _this = this;
         events.forEach(function (event) {
             delete _this._supress[event];
@@ -1461,7 +1623,19 @@ var CarouselService = /** @class */ (function () {
        * @param number The input to be tested
        * @returns An indication if the input is a Number or can be coerced to a Number
        */
-    CarouselService.prototype._isNumeric = function (number) {
+    /**
+     * Determines if the input is a Number or something that can be coerced to a Number
+     * @private
+     * @param {?} number The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number
+     */
+    CarouselService.prototype._isNumeric = /**
+     * Determines if the input is a Number or something that can be coerced to a Number
+     * @private
+     * @param {?} number The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number
+     */
+    function (number) {
         return !isNaN(parseFloat(number));
     };
     /**
@@ -1469,7 +1643,19 @@ var CarouselService = /** @class */ (function () {
      * @param value The input to be tested
      * @returns An indication if the input is a Number or can be coerced to a Number, or Boolean
      */
-    CarouselService.prototype._isNumberOrBoolean = function (value) {
+    /**
+     * Determines whether value is number or boolean type
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or Boolean
+     */
+    CarouselService.prototype._isNumberOrBoolean = /**
+     * Determines whether value is number or boolean type
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or Boolean
+     */
+    function (value) {
         return this._isNumeric(value) || typeof value === 'boolean';
     };
     /**
@@ -1477,7 +1663,19 @@ var CarouselService = /** @class */ (function () {
      * @param value The input to be tested
      * @returns An indication if the input is a Number or can be coerced to a Number, or String
      */
-    CarouselService.prototype._isNumberOrString = function (value) {
+    /**
+     * Determines whether value is number or string type
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or String
+     */
+    CarouselService.prototype._isNumberOrString = /**
+     * Determines whether value is number or string type
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or String
+     */
+    function (value) {
         return this._isNumeric(value) || typeof value === 'string';
     };
     /**
@@ -1485,7 +1683,19 @@ var CarouselService = /** @class */ (function () {
      * @param value The input to be tested
      * @returns An indication if the input is a Number or can be coerced to a Number, or String
      */
-    CarouselService.prototype._isStringOrBoolean = function (value) {
+    /**
+     * Determines whether value is number or string type
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or String
+     */
+    CarouselService.prototype._isStringOrBoolean = /**
+     * Determines whether value is number or string type
+     * @private
+     * @param {?} value The input to be tested
+     * @return {?} An indication if the input is a Number or can be coerced to a Number, or String
+     */
+    function (value) {
         return typeof value === 'string' || typeof value === 'boolean';
     };
     /**
@@ -1501,10 +1711,12 @@ var CarouselService = /** @class */ (function () {
             y: first.y - second.y
         };
     };
-    CarouselService = tslib_1.__decorate([
-        Injectable(),
-        tslib_1.__metadata("design:paramtypes", [OwlLogger])
-    ], CarouselService);
+    CarouselService.decorators = [
+        { type: Injectable }
+    ];
+    CarouselService.ctorParameters = function () { return [
+        { type: OwlLogger }
+    ]; };
     return CarouselService;
 }());
 export { CarouselService };
