@@ -121,7 +121,7 @@
       "prefix": "owl-carousel-libdemo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/ngx-owl-carousel-o/tsconfig.lib.json",
             "project": "libs/ngx-owl-carousel-o/ng-package.json"
